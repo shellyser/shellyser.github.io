@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="{{ ASSET_PATH }}/css/base.css" rel="stylesheet">
+     <link href="{{ ASSET_PATH }}/css/skeleton.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/css/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ ASSET_PATH }}/css/syntax.css" rel="stylesheet">
+
+    <!-- Le fav and touch icons -->
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+   <!--  atom & rss feed
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed"> -->
+
+  </head>
+
+  <body> 
+    <div class="container">
+      <header class="row">
+      <div class="logo ten columns">
+        <h1>  <a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+      </div>
+      <div  class="six columns">
+        <!-- Nav Bar -->
+      <nav>
+        {% assign pages_list = site.pages %}
+        {% assign group = 'navigation' %}
+        {% include JB/pages_list %}
+        {% for post in pages_list %}
+         <span><a href="{{ BASE_PATH }}{{ page.url }}" >{{page_list.title}}</a></span>
+         {% endfor %}
+      </nav>
+    </div> 
+        <!-- End Nav -->
+    </header>  
+ <div class="sixteen columns">
+
+
+
+  <!-- Main Page Content and Sidebar -->
+
+
+
+    <!-- Main Blog Content -->
+   
+
+      {{ content }}
+        
+<!--   </div>
+ -->
+    <!-- End Main Blog Content -->
+
+  <!-- End Main Content and Sidebar -->
+
+  <!-- Footer -->
+
+  <!-- <footer>
+    <div class="sixteen columns">
+      <hr />
+        <div class="one-third column">
+            <span><a href="#">link 1</a></span>
+            <span><a href="#">link 2</a></span>
+            <span><a href="#">link 3</a></span>
+            <span><a href="#">link 4</a></span>
+        </div>
+        <div class="two-third column">
+          <p>&copy; 2014 Shelly Seroussi </p>
+        </div>
+      </div>
+  </footer> -->
+</div>
+</div> <!-- End Of Container-->
+    <script src="{{ ASSET_PATH }}/js/vendor/jquery.js"></script>
+    <script src="{{ ASSET_PATH }}/js/base.js"></script>
+<!--      {% include JB/analytics %}
+ -->  
+</body>
+</html>
+
