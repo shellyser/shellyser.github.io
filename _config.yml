@@ -1,9 +1,11 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
-
+permalink: /:year/:month/:day/:title 
+paginate: 8
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
+paginate_path: "blog/page:num"
+
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -14,7 +16,7 @@ author :
   name : Shelly Seroussi
   email : shellyser@gmail.com
   github : shellyser
-  twitter : username
+  twitter : shellyseroussi
   feedburner : feedname
 
 # The production_url is only used when full-domain names are needed

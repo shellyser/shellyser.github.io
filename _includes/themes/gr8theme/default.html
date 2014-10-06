@@ -42,18 +42,14 @@
       </div>
       <div  class="six columns">
         <!-- Nav Bar -->
+      {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
       <nav>
-        {% assign pages_list = site.pages %}
-        {% assign group = 'navigation' %}
-        {% include JB/pages_list %}
-        {% for post in pages_list %}
-         <span><a href="{{ BASE_PATH }}{{ page.url }}" >{{page_list.title}}</a></span>
-         {% endfor %}
+        <span><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></span>
+        <span><a {% if location == 'myresume' %}class="active" {% endif %}href="/myresume.html">Resume</a></span>
       </nav>
     </div> 
         <!-- End Nav -->
     </header>  
- <div class="sixteen columns">
 
 
 
@@ -88,7 +84,7 @@
         </div>
       </div>
   </footer> -->
-</div>
+
 </div> <!-- End Of Container-->
     <script src="{{ ASSET_PATH }}/js/vendor/jquery.js"></script>
     <script src="{{ ASSET_PATH }}/js/base.js"></script>

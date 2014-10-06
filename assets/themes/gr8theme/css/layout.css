@@ -114,7 +114,9 @@
 		margin: 0px auto;
 	}
 
-
+	div#post-pagination {
+		text-align: center;
+	}
 
 /* #Media Queries
 ================================================== */
