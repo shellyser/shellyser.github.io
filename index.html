@@ -5,11 +5,45 @@ tagline:
 
 ---
 {% include JB/setup %}
-
-<div class= "main row">
-  <div class= "sixteen columns">
-      <h1>I'm a Web Developer & Designer living in Brooklyn, NY. I have a Communication Design BFA from Parson's. You can check out some of my work <a href="https://www.behance.net/shellyseroussi">here</a>. I am also a Flatiron School Fellow Alumni. Aside from learning how to make a nifty knot & rock karoake, I have learned some internets and worked on cool projects such as <a href="http://abodely.herokuapp.com/login" target="_blank">Abodely</a> & <a href="http://givvhub.herokuapp.com/" target="_blank">Givvhub</a>.</h1>
-   </div>
+<div id ="main">
+  <div class= "row">
+    <div class= "sixteen columns">
+      <h1>{{ site.tagline }}</h1>
+    </div>
+  </div>
+    <div class="row bio">
+      <div class= "five columns">
+        <p><span>About Me: </span></p>
+      </div>
+      <div class= "eleven columns">
+        <p>Hi! I am a recent Flatiron School Fellow Alumni where I learned how to build cool stuff for the web. Some of the projects I worked on are <a href="http://abodely.herokuapp.com/login" target="_blank">Abodely</a> & <a href="http://givvhub.herokuapp.com/" target="_blank">Givvhub</a>. I am also a designer with a BFA in Communication Design. You can check out some of my work <a href="http://www.shellyseroussi.com" target="_blank">here</a>. I currently live in Brooklyn, NY. </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="five columns">
+      <p><span>Latest Posts: </span></p>
+    </div>
+     <div class= "eleven columns">
+      {% for post in site.posts offset: 0 limit: 4 %}
+        <article class= "sixteen columns alpha">
+          <div class= "two columns alpha">
+            <h2>  {{ post.date | date: "%m/%d/%y" }}</h2>
+          </div>
+          <div class= "thirteen columns omega">
+            <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+  </div>
+  <!-- <div class = "row connect">
+    <div class="offset-by-five eleven columns">
+      <span><a href="http://github.com/shellyser"><i class="fa fa-github fa-lg"></i></a></span>
+      <span><a href="http://www.linkedin.com/in/shellyseroussi/"><i class="fa fa-linkedin fa-lg"></i></a></span>
+      <span><a href="http://twitter.com/ShellySeroussi"><i class="fa fa-twitter fa-lg"></i></a></span>
+       <span><a href="http://behance.net/shellyseroussi"><i class="fa fa-behance fa-lg"></i></a></span>
+      </div>
+  </div> -->
 </div>
     
 

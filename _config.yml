@@ -11,7 +11,7 @@ paginate_path: "blog/page:num"
 # so be sure to set them if your theme uses them.
 #
 title : Shelly Seroussi
-tagline: Designer / Web Developer
+tagline: Web Developer & Designer 
 author : 
   name : Shelly Seroussi
   email : shellyser@gmail.com
