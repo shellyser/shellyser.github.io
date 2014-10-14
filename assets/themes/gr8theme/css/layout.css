@@ -21,35 +21,58 @@
 		text-decoration: none;
 	}
 
+	a:hover{
+		color: #4CDDE8;
+	}
+
 	body {
 		background-color: #8E9AA9;
 		color: white;
-		font: 1.2rem/1.8rem "Lato", "HelveticaNeue", Helvetica, sans-serif;
+		font: 1.1rem/1.7rem "Lato", "HelveticaNeue", Helvetica, sans-serif;
 	}
 
 	h1, h2, h3, h4, h5,  a:visited {
 		color: white;
 		font: 1.2rem/1.8rem "Lato", "HelveticaNeue", Helvetica, sans-serif;
+	}
 
+	 h1 {
+		font-weight: 400;
+		font-size: 3rem;
+		line-height: 3.5rem;
+		margin: 5% 0px;
+	}
+
+	h2 {
+		font-weight: bold;
+		color: #4CDDE8;
+	}
+
+	h3 a:hover {
+		color: #4CDDE8;
+	}
+
+	h3 a {
+		margin-top: 40rem;
 	}
 
 	header {
 		margin-top: 3rem;
 	}
 
-	header .logo  {
-		font-size: 8rem;
-
+	header .logo a {
+		font: 2.0rem "Lato", "HelveticaNeue", Helvetica, sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+		/*font-family: 'Vollkorn', serif;*/
 	}
 
-	header .logo a {
-		color: white;
-		font-weight: 700;
-		font-size: 2rem;
-		text-transform: uppercase;
-		/*color: #4CDDE8;*/
-		/*font-family: 'Vollkorn', serif;*/
+	header .connect span {
+		margin-right: .5rem;
+	}
 
+	header .connect  {
+		text-align: right;
 	}
 
 	nav a:hover, .active{
@@ -71,27 +94,20 @@
 		margin-left: 0px;
 	}
 
-	 a:hover{
-		color: #4CDDE8;
-	}
-
 	.highlight {
 		color: black;
 		font: 14px/1.8em Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+		word-wrap: break-word;
+		margin-bottom: 2rem;
+	}
+
+	p img {
+		display: block;
+		margin: 0px auto;
 	}
 
 /* #Page Styles
 ================================================== */
-	#main {
-		font: 1.3rem/2rem "Lato", "HelveticaNeue", Helvetica, sans-serif;
-	}
-
-	#main h1 {
-		font-weight: 400;
-		font-size: 3rem;
-		line-height: 3.5rem;
-		margin: 5% 0px;
-	}
 
 	#main p span{
 		font-weight: 700;
@@ -101,20 +117,6 @@
 	#main .bio a {
 		border-bottom: 1px solid;
 	}	 
-
-	h2 {
-		font-weight: bold;
-		font-family: 'Lato', sans-serif;
-		color: #4CDDE8;
-	}
-
-	h3 a:hover {
-		color: #4CDDE8;
-	}
-
-	h3 a {
-		margin-top: 40rem;
-	}
 
 	.blog article {
 		padding: 0.8rem 0px;
@@ -137,25 +139,29 @@
 		margin-bottom: 6px;
 	}
 
-	.post {
-		display: none;
-	}
-
-	p img {
-		display: block;
-		margin: 0px auto;
-	}
-
-	div#post-pagination {
+	#post-pagination {
 		text-align: center;
 	}
 
-	.connect span {
-		margin-right: .5rem;
+	#post {
+		background-color: #fff;
+		color: #000;
 	}
 
-	header .connect  {
-		text-align: right;
+	#post h1 {
+		color: #8E9AA9;
+		font-weight: bold;
+		margin-bottom: 0rem;
+	}
+
+	#post h3{
+		color: #4CDDE8;
+	}
+
+	#post h4{
+		color: #8E9AA9;
+		font-weight: bold;
+		font-size: 1.5rem;
 	}
 
 /* #Media Queries

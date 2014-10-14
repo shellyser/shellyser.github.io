@@ -1,19 +1,15 @@
-<div class="content">
-<div class="page-header">
-  <h3>{{ page.title }} {% if page.tagline %}</h3>
-  <h4>{{page.tagline}}</h4>
-  {% endif %}
-</div>
-
-<!-- <div class="twelve columns">
- -->  <div class="span12">
-    <div class="date">
-      <span>{{ page.date | date_to_long_string }}</span>
+<div id="post">
+  <div class="container">
+  <div class= "row">
+    <div class= "sixteen columns">
+      <h1>{{ page.title }}</h1>
+      <h3>{{ page.date | date_to_long_string }}</h3>
     </div>
-    
+    <div class="thirteen columns">
+
       {{ content }}
     
-
+    </div>
   {% unless page.categories == empty %}
     <ul class="tag_box inline">
       <li><i class="icon-folder-open"></i></li>
@@ -50,5 +46,4 @@
  <!--   {% include JB/comments %} -->
   </div>
 </div>
-<!-- </div>
- -->
+</div>
