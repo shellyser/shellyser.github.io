@@ -26,7 +26,7 @@ Perfect! I went over each element in the array that represents my rows, and the 
 
 The maze solver uses the array’s index values to determine the position of each node so I found myself repeatedly searching for indexes every time I was iterating over the array. Here’s an example where map.with_index came in handy: 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 def start_position
   current_node = []
   @maze_arr.map do |row|
@@ -43,7 +43,7 @@ end
 
 Using the map.with_index I get each element in the array plus its index making the code much cleaner and easier to read: 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 def start_position
   current_node = []
   @maze_arr.map.with_index do |row, y|

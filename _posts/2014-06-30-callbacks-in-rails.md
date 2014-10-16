@@ -36,7 +36,7 @@ after_destroy
 
 In order to use a callback, the method it calls upon needs to be defined, usually within a private method in order to keep the principle of object encapsulation. The method will then be executed at the time requested with the callback on the specified actions:
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
   
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
 {% endhighlight %}
 As useful and commonly used as they are, callbacks need to be used with caution. A common example I have seen them used for is in user models were an email confirmation needs to be sent out to the user notifying him that a certain action has been made. This sort of callback can cause complications when testing as the multiple sending of emails slows down the tests significantly. Also, we are making a request that happens after the user object has been created and might not be within its area of responsibility. In this case, it’s better to get rid of the callback and use a separate class that’s single responsibility is to hold the methods that will sent out those email notifications. Here’s and example taken from Samuel Mullen’s blog:
 
-{% highlight ruby linenos  %}
+{% highlight ruby  %}
 class OrderCompletion
   attr_accessor :order
  
@@ -74,7 +74,7 @@ class OrderCompletion
   end
 end
 {% endhighlight %}
-{% highlight ruby linenos %}
+{% highlight ruby %}
 def create
   @order = Order.new(params[:order])
   @order_completion = OrderCompletion.new(@order)

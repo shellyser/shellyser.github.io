@@ -47,33 +47,27 @@
       {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
       <nav>
         <span><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></span>
-        <span><a {% if location == 'myresume' %}class="active" {% endif %}href="/myresume.html">Resume</a></span>
+    <!--     <span><a {% if location == 'myresume' %}class="active" {% endif %}href="/myresume.html">Resume</a></span> -->
         <span><a href="mailto:shellyser@gmail.com">Contact</a></span>
       </nav>
     </div> 
     <div class="connect six columns">
-  <span><a href="http://github.com/shellyser"><i class="fa fa-github fa-lg"></i></a></span>
+  <span><a href="http://github.com/shellyser/"><i class="fa fa-github fa-lg"></i></a></span>
   <span><a href="http://www.linkedin.com/in/shellyseroussi/"><i class="fa fa-linkedin fa-lg"></i></a></span>
-  <span><a href="http://twitter.com/ShellySeroussi"><i class="fa fa-twitter fa-lg"></i></a></span>
+  <span><a href="http://twitter.com/ShellySeroussi/"><i class="fa fa-twitter fa-lg"></i></a></span>
   </div>
         <!-- End Nav -->
         </div>
     </header>  
 
-  <!-- Main Page Content and Sidebar -->
-
-    <!-- Main Blog Content -->
-   
-
       {{ content }}
-        
-<!--   </div>
- -->
-    <!-- End Main Blog Content -->
-
-  <!-- End Main Content and Sidebar -->
-
- <!-- End Of Container-->
+     <!--  <footer>
+        <div class="container">
+          <div class="sixteen columns">
+            <p>Copyright © 2014 - Shelly Seroussi</p>
+          </div>
+        </div>
+      </footer> -->
     <script src="{{ ASSET_PATH }}/js/vendor/jquery.js"></script>
     <script src="{{ ASSET_PATH }}/js/base.js"></script>
 <!--      {% include JB/analytics %}

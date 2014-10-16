@@ -14,7 +14,7 @@ In the Sequel gem that we covered in lecture today, migration includes both the 
 
  The up is used to apply the changes on the database and in the down block we can specify the ways to revert those changes. 
 
-{% highlight ruby linenos %}
+{% highlight ruby  %}
 require 'sequel'
 Sequel.extension :migration
 Sequel.migration do
@@ -35,7 +35,7 @@ Will try to do the revert for us if it knows how to. This will work for a large 
 
 create_table, add_column, add_index, rename_column, alter_table
 
-{% highlight ruby linenos %}
+{% highlight ruby  %}
 Sequel.migration do
     change do
         create_table(:artists) do
@@ -50,7 +50,7 @@ end
 
 Migration files should be stored in one location with based on Sequel::Migration and named in ascending numerical order following the pattern of version_title, such as:
 
-{% highlight ruby linenos %}
+{% highlight ruby  %}
 001_create_sessions.rb
 002_add_data_column.rb
 003_add_index.rb

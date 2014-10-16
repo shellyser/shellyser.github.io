@@ -14,7 +14,7 @@ shellyser ♥ bin/rails generate mailer UserMailer
 
 In the UserMailer class we’ll setup the mailer methods we want to use. The default is a hash that will be set in every mailer method, here we are setting the from field that will appear on the actual email as my flatiron school account. The signup_confirmation method will be responsible of sending the email using the MailerAction mail method. Since the signup_confirmation method isn’t receiving any values through params like our controller actions do we need to set it to receive an argument of user and we set this to an instance of user so we can use it in our view template. 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class UserMailer < ActionMailer::Base
   default from: "shelly.seroussi@flatironschool.com"
  
@@ -28,7 +28,7 @@ end
 
 In our views user_mailer folder we’ll create a file that will be rendered as the body of the email. I made two files one in html and the other in text since not all clients prefer HTML. The mail method will know how to generate an email using either of these templates. 
 
-{% highlight html linenos %}
+{% highlight erb %}
 <h1>Hi <%= @user.name %>!</h1>
 <p> You have successfully signed up to myuglyblog.com<br></p>
 <p> To login to the site, just follow this link: <%= @url %>.</p>
@@ -37,7 +37,7 @@ In our views user_mailer folder we’ll create a file that will be rendered as t
 
 Now, we just need to call the UserMailer class in our Users controller create action. 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 def create
     @user = User.new(user_params)
     if @user.save
@@ -52,7 +52,7 @@ def create
 
 Last thing, we need to configure out development environment in order to set raise sending errors to true and any other mailing delivery configurations we would like to do. 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = true
  

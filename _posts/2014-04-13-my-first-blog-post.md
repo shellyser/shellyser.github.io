@@ -9,10 +9,7 @@ tags : [prework, jekyll, flatironfellowship]
 
 I am very excited to finally have my blog setup (well, in the works at least). For building this blog I decided to give the Jekyll ruby gem a try as it seems to be a great way to get into the habit of using git, gitub and ruby. Hopefully, I will quickly get the hang of it and start messing with the code a bit more. 
 
-<!--more-->
-####Prework Overview
-
-##### Week 1 
+#### Week 1 
 
 First week of the Flatiron School Fellowship was for the most part an introductory week although we quickly dived into the prework from day 1. As I had suspected, the guys at Flatiron did an amazing job gathering an inspiring group of people which I look forward to working with for the remainder of the course. We also had an inspiring talk with both Adam and Avi, and got to meet one of our instructors Steven. During that week, I dived into prework, working on some HTML, CSS and Git. 
 

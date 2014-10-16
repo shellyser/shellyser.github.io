@@ -1,6 +1,5 @@
-// $(function() {
-//   $(".blog h3").click(function(){
-//     console.log("I was clicked!");
-//     $(this).parent().children(".post").toggle(500);
-//   });
-// });
+$(function() {
+  $("pre code").html(function(index, html) {
+    return html.trim().replace(/^(.*)$/mg, "<span class=\"line\">$1</span>");
+});
+});

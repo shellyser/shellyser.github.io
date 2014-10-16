@@ -1,16 +1,27 @@
 <div id="post">
-  <div class="container">
-  <div class= "row">
-    <div class= "sixteen columns">
-      <h1>{{ page.title }}</h1>
-      <h3>{{ page.date | date_to_long_string }}</h3>
+    <div id= "nav-single">
+        {% if page.previous %}
+          <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}" rel="prev"><span class="prev">&larr; Previous</span></a>
+        {% else %}
+          <a><span class="prev disabled">&larr; Previous</span></a>
+        {% endif %}
+        {% if page.next %}
+          <a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}"><span class="next">&larr; Next</span></a>
+        {% else %}
+          <a><span class="next disabled">&larr; Next</span></a>
+        {% endif %}
     </div>
-    <div class="thirteen columns">
-
-      {{ content }}
+    <div class="container">
     
+    <div class= "sixteen columns">
+      <div class="page-header">
+      <h1>{{ page.title }}</h1>
+      <h3>Posted on <span>{{ page.date | date_to_long_string }}</span></h3>
     </div>
-  {% unless page.categories == empty %}
+      {{ content }}
+        </div>
+
+<!--   {% unless page.categories == empty %}
     <ul class="tag_box inline">
       <li><i class="icon-folder-open"></i></li>
       {% assign categories_list = page.categories %}
@@ -24,26 +35,10 @@
       {% assign tags_list = page.tags %}
       {% include JB/tags_list %}
     </ul>
-  {% endunless %}  
+  {% endunless %}  -->
 
-    <hr>
-    <div class="pagination">
-      <ul>
-      {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
-      {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
-      {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
-      {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
-      {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
-      {% endif %}
-      </ul>
-    </div>
-    <hr>
- <!--   {% include JB/comments %} -->
-  </div>
+   {% include JB/comments %} 
+
+
 </div>
 </div>

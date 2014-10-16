@@ -8,7 +8,7 @@ tagline:
 <div id ="main">
   <div class="container">
   <div class= "row">
-    <div class= "sixteen columns">
+    <div class= "sixteen columns page-header">
       <h1>{{ site.tagline }}</h1>
     </div>
   </div>
@@ -17,10 +17,10 @@ tagline:
         <p><span>About Me: </span></p>
       </div>
       <div class= "eleven columns">
-        <p>Hi! I am a recent Flatiron School Fellow Alumni where I learned how to build cool stuff for the web. Some of the projects I worked on are <a href="http://abodely.herokuapp.com/login" target="_blank">Abodely</a> & <a href="http://givvhub.herokuapp.com/" target="_blank">Givvhub</a>. I am also a designer with a BFA in Communication Design. You can check out some of my work <a href="http://www.shellyseroussi.com" target="_blank">here</a>. I currently live in Brooklyn, NY. </p>
+        <p>I am a recent graduate of The Flatiron School Fellowship, where I learned how to build cool stuff for the web. Some of the projects I worked on are <a href="http://abodely.herokuapp.com/login/" target="_blank">Abodely</a> & <a href="http://givvhub.herokuapp.com/" target="_blank">Givvhub</a>. I am also a designer with a BFA in Communication Design. You can check out some of my work <a href="http://www.shellyseroussi.com" target="_blank">here</a>. I currently live in Brooklyn, NY. </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row latest-posts">
     <div class="five columns">
       <p><span>Latest Posts: </span></p>
     </div>
@@ -35,6 +35,9 @@ tagline:
           </div>
         </article>
         {% endfor %}
+        <div class= "offset-by-two thirteen columns alpha">
+        <p><a href="/blog/">All Posts >>></a>  </p>
+      </div>
       </div>
   </div>
 </div>

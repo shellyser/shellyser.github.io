@@ -6,7 +6,7 @@ tags : [rails, ruby, api, json]
 
 I worked this week on a little rails app that uses the NYTimes movie api to grab a json with all the information of the latest critically acclaimed movies and create an image gallery of them. I built it pretty quickly and knew I had some major refactoring to do, great opportunity to learn some new tricks!
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 require 'httparty'
  
 class Movie
@@ -27,7 +27,7 @@ class Movie
 end
 {% endhighlight %}
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class MoviesController < ApplicationController
     def index
      @movies = Movie.new
@@ -49,7 +49,7 @@ class MoviesController < ApplicationController
     end
 end
 {% endhighlight %}
-{% highlight ruby linenos %}
+{% highlight erb %}
 ***
 <div class="prev_next">
    <%= link_to "<button>Previous</button>".html_safe,  :controller => :movies, :action => :update_previous %>
@@ -63,7 +63,7 @@ After getting my app to simply work there were several things I knew I desperate
 
 The button_to tag wasn’t working for me and I had to default to creating a link_to tag and attaching to it the button HTML tags which looked pretty terrible. The problem was that the button_to tag defaults to a POST method as it’s usually used to submit and change data rather than just requesting data. I found the problem in my routes file:
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 get 'movies/index'
 get 'movies/update_next'
 get 'movies/update_previous'
@@ -76,19 +76,20 @@ Every call to the API only gave me 20 movies at a time and in order to get the n
 
 I made a key value pair which I would use as my params, key being “page” and the value would be either “next” or “prev”. I also updated the path to the cleaner rails form and passed in the appropriate params. Now, in my controller I could easily use only the update method and according to the param value received call on the prev or next method to update my @@count variable.
 
-{% highlight ruby linenos %}
+{% highlight erb %}
   <div class="prev_next">
-    <%= button_to "Previous",  movies_update_path(page: :prev)%>
+    <%= button_to "Previous",  movies_update_path(page: :prev) %>
     <%= button_to "Next", movies_update_path(page: :next) %>
   </div>
 {% endhighlight %}
-{% highlight ruby linenos %}
-    def update
-      @movies = Movie.new
-      params[:page] == "next" ? @movies.next : @movies.prev
-      @parsedmovies = @movies.parse
-      redirect_to '/'
-    end
+
+{% highlight ruby %}
+  def update
+    @movies = Movie.new
+    params[:page] == "next" ? @movies.next : @movies.prev
+    @parsedmovies = @movies.parse
+    redirect_to '/'
+end
 {% endhighlight %}
 ####Dynamic Method Call Using “send”
 
@@ -96,7 +97,7 @@ The controller looks so much better but with a great suggestion from Ken Lu I fo
 
 So here is how my controller looks like now: 
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 class MoviesController < ApplicationController
     def index
      @movies = Movie.new
